@@ -27,9 +27,7 @@ def pic(update: Update, context: CallbackContext):
     if(context.args[0] == "cat"):
         photo_ls = ["https://steemitimages.com/640x0/https://img.esteem.ws/5e0zyxfznd.jpg", "https://filmdaily.co/wp-content/uploads/2020/04/cute-cat-videos-lede-1300x882.jpg", "https://preview.redd.it/zn5l96e3jyx71.jpg?width=690&format=pjpg&auto=webp&s=f7de38277a19d48a0f562a9c668ee81973f15844", "https://www.baldivisvet.com.au/wp-content/uploads/2017/10/cats-cute-cat-licking-paw1920.jpg", "https://i.guim.co.uk/img/media/43352be36da0eb156e8551d775a57fadba8ae6d7/0_0_1440_864/master/1440.jpg?width=620&quality=85&auto=format&fit=max&s=b68713c76b3d7fc98eaba7d9065f97da"]
         
-        value = randint(0, 4)
-        
-        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_ls[value], caption="Here is a cute cat for you :)")
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_ls[randint(0, 4)], caption="Here is a cute cat for you :)")
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, text="It's not cute enough :(")    
     
